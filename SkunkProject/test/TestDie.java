@@ -20,6 +20,13 @@ public class TestDie
 	public void tearDown() throws Exception
 	{
 	}
+	//#############################################
+	@Test
+	public void DieTest() {
+		die = new Die();
+		die.roll();
+	}
+	//###############################################
 
 	@Test
 	public void test_initialization_of_predictable_die()
@@ -27,16 +34,16 @@ public class TestDie
 		die.roll();
 		int value = die.getLastRoll();
 
-		assertEquals("first value not 3", 3, value);
+		assertEquals(3, value);
 	}
 
 	@Test
 	public void test_roll_2_of_predictable_die()
 	{
 		die.roll();
-		assertEquals("first value not 3", 3, die.getLastRoll());
+		assertEquals(3, die.getLastRoll());
 		die.roll();
-		assertEquals("second value not 2", 2, die.getLastRoll());
+		assertEquals(2, die.getLastRoll());
 
 	}
 
@@ -46,7 +53,7 @@ public class TestDie
 		die.roll();
 		die.roll();
 		die.roll();
-		assertEquals("third value not 1", 1, die.getLastRoll());
+		assertEquals(1, die.getLastRoll());
 	}
 
 	@Test
@@ -56,7 +63,7 @@ public class TestDie
 		die.roll();
 		die.roll();
 		die.roll();
-		assertEquals("fourth value not wrapping back to first value 3", 3, die.getLastRoll());
+		assertEquals(3, die.getLastRoll());
 	}
 	
 	@Test
@@ -67,20 +74,23 @@ public class TestDie
 		die.roll();
 		die.roll();
 		die.roll();
-		assertEquals("fourth value not wrapping back to first value 3", 2, die.getLastRoll());
+		assertEquals(2, die.getLastRoll());
 	}
 	
 	@Test(expected=RuntimeException.class)
 	public void test_null_initial_int_array()
-	{
+	{ 
 		Die die = new Die(null);
-		die.roll();
 	}
 	
 	@Test(expected=RuntimeException.class)
 	public void test_empty_initial_array()
 	{
 		Die die = new Die(new int[] {});
-		die.roll();
+	}
+	
+	@Test
+	public void toStringTest() {
+		assertEquals("Die: "+ 0, die.toString());
 	}
 }

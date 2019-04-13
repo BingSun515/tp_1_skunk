@@ -40,6 +40,19 @@ public class Dice
 
 	// Instance methods can also be declared anywhere
 	// Convention: after constructors
+	
+	//######################################
+	//PredictableDie
+	public void setDie1(Die d)
+	{
+		this.die1 = d;
+	}
+
+	public void setDie2(Die d)
+	{
+		this.die2 = d;
+	}
+	//######################################
 
 	public int getLastRoll()
 	{
@@ -68,26 +81,63 @@ public class Dice
 		return "Dice with last roll: " + getLastRoll() + " => " + die1.getLastRoll() + " + " + die2.getLastRoll();
 
 	}
+	
+	public SkunkEnum getSkunk()
+	{
+		if (this.isDiceLastRollSingleSkunk())
+		{
+			return SkunkEnum.SingleSkunk;
+		}
+		else if (this.isDiceLastRollDoubleSkunk())
+		{
+			return SkunkEnum.DoubleSkunk;
+		}
+		else if (this.isDiceLastRollDeuceSkunk())
+		{
+			return SkunkEnum.DeuceSkunk;
+		}
+		else
+		{
+			return SkunkEnum.NoSkunk;
+		}
+	}
+	
+	public boolean isDiceLastRollSingleSkunk()
+	{
+		return ((this.die1.getLastRoll() == 1 && this.die2.getLastRoll() > 2) || (this.die2.getLastRoll() == 1 && this.die1.getLastRoll() > 2));
+	}
+	
+	public boolean isDiceLastRollDoubleSkunk()
+	{
+		return (this.die1.getLastRoll() == 1 && this.die2.getLastRoll() == 1);
+	}
+	
+	public boolean isDiceLastRollDeuceSkunk()
+	{
+		return (this.die1.getLastRoll() == 1) && (this.die2.getLastRoll() == 2 ) ||
+				(this.die2.getLastRoll() == 1 ) && (this.die1.getLastRoll() == 2 );
+	}
+	
 
 	// static methods can go anywhere - but at end is standard
 
 	public static final int NUM_TRIALS = 360;
 
-	public static void main(String[] args)
-	{
-		Dice dice1 = new Dice();
-		int doubleSkunkCount = 0;
-
-		for (int i = 0; i < NUM_TRIALS; i++)
-		{
-			dice1.roll();
-			StdOut.println(dice1);
-			
-			if (dice1.getLastRoll() == 2)
-				doubleSkunkCount++;
-		}
-
-		StdOut.println("Actual count: " + doubleSkunkCount);
-		StdOut.println("Expected count: " + (NUM_TRIALS / 36.0));
-	}
+//	public static void main(String[] args)
+//	{
+//		Dice dice1 = new Dice();
+//		int doubleSkunkCount = 0;
+//
+//		for (int i = 0; i < NUM_TRIALS; i++)
+//		{
+//			dice1.roll();
+//			StdOut.println(dice1);
+//			
+//			if (dice1.getLastRoll() == 2)
+//				doubleSkunkCount++;
+//		}
+//
+//		StdOut.println("Actual count: " + doubleSkunkCount);
+//		StdOut.println("Expected count: " + (NUM_TRIALS / 36.0));
+//	}
 }
