@@ -34,5 +34,13 @@ public class TestScore {
 		assertEquals(102, s1.getChipChangeScore());
 		assertEquals(153, s1.getKittyChangeScore());
 	}
+	
+	@Test
+	public void getWinningScore() {
+		Score s1 = new Score();
+		assertEquals(100, s1.getWinningScore());
+	}
+	
+	
 
 }
