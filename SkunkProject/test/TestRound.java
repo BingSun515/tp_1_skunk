@@ -7,11 +7,9 @@ import org.junit.Test;
 public class TestRound {
 
 //	@Test
-//	public void getRound() {
-//		Turn t1 = new Turn();
-//		Round r1 = new Round(t1);
-//		Score s1 =new Score();
-//		assertEquals(s1 ,r1.getScore());
+//	public void TestRound() {
+//		Round r1 = new Round(null);
+//		r1.getScore();
 //	}
 
 }
