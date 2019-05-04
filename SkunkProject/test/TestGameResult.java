@@ -6,16 +6,30 @@ import org.junit.Test;
 public class TestGameResult {
 	
 //	@Test
-//	public void testGameResultSingleSkunk() {
+//	public void testgetRollScore() {
 //		Die die1 = new Die(new int[] {1});
 //		Die die2 = new Die(new int[] {3});
 //		Roll r1 = new Roll();
 //		r1.setDice(die1, die2);
-//		GameResult GR = new GameResult(new Player("Eric"), r1);
+//		GameResult gr = new GameResult(null);
 //		assertEquals("Dice with last roll: 4 => 1 + 3\r\n" + 
 //				"-----------\r\n" + 
 //				"Last roll was a single skunk\r\n" + 
-//				"",GR.getRollScore());
+//				"",gr.getRollScore());
+//	}
+//	
+//	@Test
+//	public void testGameSummary() {
+//		Die die1 = new Die(new int[] {1});
+//		Die die2 = new Die(new int[] {3});
+//		Roll r1 = new Roll();
+//		r1.setDice(die1, die2);
+//		GameResult gr = new GameResult(null);
+//		Score score = null;
+//		assertEquals("Dice with last roll: 4 => 1 + 3\r\n" + 
+//				"-----------\r\n" + 
+//				"Last roll was a single skunk\r\n" + 
+//				"",gr.getGameSummary(score));
 //	}
 //	
 //	@Test

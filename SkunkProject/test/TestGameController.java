@@ -11,11 +11,11 @@ public class TestGameController {
 		assertEquals("Eric", gc1.getPlayerName());
 	}
 	
-	@Test
-	public void TestGetPlayerRollChoice() {
-		GameController gc1 = new GameController();
-		assertEquals(null, gc1);
-	}
+//	@Test
+//	public void TestGetPlayerRollChoice() {
+//		GameController gc1 = new GameController();
+//		assertEquals(null, gc1);
+//	}
 	
 //	@Test
 //	public void testStartGame() {
