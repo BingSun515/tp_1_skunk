@@ -19,7 +19,8 @@ public class TestGameController {
 	public void testStartGame() {
 		GameController gc2 = new GameController();
 		gc2.startGame();
-
+		
+		
 	}
 		
 }
