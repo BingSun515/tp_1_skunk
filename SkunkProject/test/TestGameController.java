@@ -8,15 +8,14 @@ public class TestGameController {
 	public void setPlayer1() {
 		GameController gc1 = new GameController();
 		gc1.setPlayer("Eric");
-		assertEquals("Eric", gc1.getPlayerbyName("Eric"));
+		assertEquals("Eric", gc1.getPlayerName());
 	}
-//	
-//	@Test
-//	public void setPlayer2() {
-//		GameController gc1 = new GameController();
-//		gc1.setPlayer(null);
-//		assertEquals(null, gc1.getPlayerName());
-//	}
+	
+	@Test
+	public void TestGetPlayerRollChoice() {
+		GameController gc1 = new GameController();
+		assertEquals(null, gc1);
+	}
 	
 //	@Test
 //	public void testStartGame() {

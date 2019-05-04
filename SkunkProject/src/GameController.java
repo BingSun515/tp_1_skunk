@@ -188,14 +188,16 @@ class GameController {
 		this.playerCount = SkunkAppUi.getPlayerNumericInput(inputMessage);
 	}
 	//add new function######################################################
-	public String getPlayerbyName(String name) {
-		for (int i = 0 ; i < this.players.size()-1; i++) {
-			if (this.players.get(i).getName()== name) {
-				return this.players.get(i).getName();
-			}
-		}
-		return null;
+	public Player getPlayer()
+	{
+		return this.players.get(0);
 	}
+	
+	public String getPlayerName()
+	{
+		return this.getPlayer().getName();
+	}
+	// new function########################################################
 
 // STATIC METHODS	
 	// TODO: PHASE 2
