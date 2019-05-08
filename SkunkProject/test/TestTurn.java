@@ -12,7 +12,7 @@ public class TestTurn {
 	public void testSetGet() {
 		Turn t1 = new Turn();
 		t1.rollAndSetScore();
+		t1.getFinalTurnScore();
+		t1.isTurnScoreHigherThanWinningScore();
 	}
-	
-
 }

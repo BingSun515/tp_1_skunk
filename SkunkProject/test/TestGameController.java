@@ -18,9 +18,6 @@ public class TestGameController {
 //	@Test
 //	public void testStartGame() {
 //		GameController gc2 = new GameController();
-//		gc2.startGame();
-//		
-//		
 //	}
 		
 }
